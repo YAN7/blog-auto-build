@@ -1,0 +1,11 @@
+{
+  "name": "auto-build",
+  "version": "1.0.0",
+  "description": "github webhook api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "YAN7",
+  "license": "ISC"
+}
