@@ -12,10 +12,14 @@ webhook是github提供的一个钩子函数,其功能是仓库发生一些事件
 1. 新建一个项目,常规的 `npm init`, `git init`.
 2. 这个有一个专门处理webhook的库`github-webhook-handler`, 我们安装它 `npm i github-webhook-handler -S`;
 3. 新建一个index.js文件.对接口参数的处理;
-4. 新建一个autoBuild.sh,这里写请求成功后要做的处理,一般是`npm i`这类的,为了验证是否触发,我们可以先写一个最简单的脚本: `echo hello world!`;
-5. 将这个项目push到github,然后在服务器中clone 这个项目;
+4. 新建一个[autoBuild.sh](./autoBuild.sh),这里写请求成功后要做的处理,一般是`npm i`这类的,为了验证是否触发,我们可以先写一个最简单的脚本: `echo hello world!`;
+5. 将这个项目push到github,然后在服务器中clone这个项目;
 6. 在服务器中启动并持久化这个项目,我用的是pm2启动;
 7. 设置nginx,设置一个二级域名并代理到这个项目启动的端口;
 8. 在自己的域名中添加解析这个二级域名;
 9. 然后重启nginx;
 10. 到这一步就大功告成了,你可以push一个测试代码到remote,看是否触发成功.如果终端输出hello,则表示触发成功,大功告成!
+
+### todo
+- [x] 实现真正的打包脚本
+- [ ] 根据接口参数实现一个接口可以自动化部署多个项目
