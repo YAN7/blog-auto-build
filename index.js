@@ -1,5 +1,5 @@
 const http = require('http');
-const spawm = require('child_process').spawm;
+const spawn = require('child_process').spawn;
 const createHeadler = require('github-webhook-handler');
 const config = require('./config');
 const handler = createHeadler({path: '/autoBuild', secret: config.secret})
@@ -22,7 +22,7 @@ handler.on('push', function (event) {
 })
 
 function runCommand(cmd, args, callback) {
-    const child = spawm(cmd, args);
+    const child = spawn(cmd, args);
     let resp = '';
     child.stdout.on('data', function (buffer) {
         resp += buffer.toString();
