@@ -1,1 +1,2 @@
-echo 'hell world';
+cd ../client
+bash deploy.sh
